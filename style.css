@@ -4,20 +4,17 @@
     align-items: center;
 }
 
-.row, .col {
-    width: 1rem;
-    height: 1rem;
-    display: 1;
-}
+
 .col {
 background: salmon;
 }
 
 body {
     display: flex;
+    flex-direction: column;
 }
 
-.container {
+.container.grid {
     display: flex;
     align-items: center;
     margin-left: auto;
@@ -25,3 +22,10 @@ body {
     gap: 5px;
 }
 
+#changeSize {
+    margin-left: 50px;
+}
+
+h1 {
+    text-align: center;    
+}

@@ -1,6 +1,11 @@
+const CONTAINER_SIZE = 400;
+
 const grid = document.querySelector('.grid');
+
+
 function createGrid(size)
 {
+    let cellSize = CONTAINER_SIZE / size;
     for(let i = 0; i < size; ++i)
     {
         let row = document.createElement('div');
@@ -11,9 +16,13 @@ function createGrid(size)
             div.textContent = "";
             div.classList.add('col');
             row.classList.add('row');
+            div.style.width = CONTAINER_SIZE/size + 'px';
+            div.style.height = CONTAINER_SIZE/size + 'px';
+            div.style.backgroundColor = 'green';
             row.appendChild(div);
             div.addEventListener('mouseover', () =>
             {
+                
                 div.style.backgroundColor = 'black';
             })
         }
@@ -37,11 +46,6 @@ changeSize.addEventListener('click', () => {
         removeGrid();
         createGrid(+userInput);
     }
-
 })
-
-
-
-
 
 createGrid(16);
